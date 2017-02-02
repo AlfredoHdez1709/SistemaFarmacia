@@ -4,7 +4,7 @@ from django.views.generic import CreateView, DeleteView, TemplateView, UpdateVie
 from .models import Cliente
 from .forms import ClienteForm
 from braces.views import LoginRequiredMixin,GroupRequiredMixin
-
+#crud para un cliente ya sea eliminar crear actualizar y dar detalle del mismo
 class ListaCliente(LoginRequiredMixin,GroupRequiredMixin, ListView):
 	context_object_name = 'clientes'
 	model = Cliente
@@ -23,7 +23,6 @@ class ActualizarView(UpdateView):
 	template_name = 'clientes/create_update_clientes.html'
 	model = Cliente
 	success_url='/lista_clientes'
-
 
 
 class EliminarView(GroupRequiredMixin, DeleteView):
